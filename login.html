@@ -1,0 +1,54 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="login.css" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+    <form class="form-signin" onSubmit="return onSubmit()">
+      <h1 class="h3 mb-3 font-weight-normal" id="title">Please Sign in</h1>
+      <label for="inputName" class="sr-only">UserName</label>
+      <input type="text" id="inputName" class="form-control" placeholder="UserName" required autofocus>
+      <label for="inputRoomName" class="sr-only">RoomName</label>
+      <input type="text" id="inputRoomName" class="form-control" placeholder="RoomName" required>
+      <select id="levels">
+        <option value="Toddler">Toddler</option>
+        <option value="Senior" selected>Senior</option>
+        </select>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+
+    <script type="text/javascript">
+        const urlParams = new URLSearchParams(window.location.search);
+        let sessionName = urlParams.get('room');
+        let type = urlParams.get('type');
+        if (type === 's')
+          document.getElementById("title").textContent = "Sign in as a Student";
+        else
+          document.getElementById("title").textContent = "Sign in as a Teacher";
+        if (type === 's') {
+          document.getElementById("inputRoomName").value = sessionName;
+          document.getElementById("inputRoomName").readOnly = true;
+          document.getElementById("inputRoomName").disabled = true;
+          document.getElementById("levels").disabled = true;
+          document.getElementById("levels").value = urlParams.get('level');
+        }
+        function onSubmit() {
+            var userName = document.getElementById("inputName").value;
+            var roomName = document.getElementById("inputRoomName").value;
+            var level = document.getElementById("levels").value;
+            if (userName && roomName) {
+              if (type === 's')
+                location = `index.html?user=${userName}&room=${roomName}&type=s&level=${level}`;
+              else
+                location = `index.html?user=${userName}&room=${roomName}&level=${level}`;
+            }
+            return false;
+        }
+    </script>
+  </body>
+</html>

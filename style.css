@@ -1,0 +1,87 @@
+h1 {
+  width: 1020px;
+    margin: 20px 100px 20px 20px;
+}
+body {
+  min-width: 720px;
+}
+.toddler .myAbacus {
+  float: left;
+}
+.toddler h1 {
+  width: auto;
+  margin: 20px 100px 20px 20px;
+}
+h2, ul {
+  margin-left: 20px;
+}
+#roomName {
+  float: right;
+  font-size: 45px;
+  color: #783E30;
+}
+.center {
+  width: 1080px;
+  display: flex;
+  justify-content: center;
+}
+.toddler #myAbacus {
+  float: left;
+}
+.toddler .center {
+  width: 200px;
+  display: block;
+  float: right;
+  margin: 60px 100px 50px 0;
+}
+.toddler.student .center {
+  margin: 90px 100px 50px 0;
+}
+.toddler .center .btn-200 {
+  margin: 0 0 25px 0;
+}
+.wrapper {
+  overflow: hidden;
+}
+.btn-200 {
+  width: 200px;
+  height: 50px;
+  margin-right: 50px;
+}
+#users {
+  margin-left: 20px;
+  width: 1020px;
+}
+#sharelink {
+  width: 65%;
+}
+#shareModal .modal-dialog {
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+}
+.chip {
+  display: inline-block;
+  height: 32px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(0,0,0,0.6);
+  line-height: 28px;
+  padding: 0 12px;
+  border-radius: 16px;
+  background-color: #e4e4e4;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  vertical-align: middle;
+  outline: none;
+}
+.white-text {
+  color: white;
+  font-weight: 600;
+}
+.btn-cpy {
+  float: right;
+  padding-top: 2px;
+  height: 32px;
+  width: 100px;
+}
